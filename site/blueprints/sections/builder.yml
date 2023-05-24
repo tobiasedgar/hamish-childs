@@ -1,0 +1,20 @@
+label: Page Builder
+type: blocks
+fieldsets:
+  text:
+    label: Text Blocks
+    type: group
+    fieldsets:
+      - text
+  media:
+    label: Media Blocks
+    type: group
+    fieldsets:
+      - media
+      - carousel
+  special:
+    label: Special Blocks
+    type: group
+    fieldsets:
+      - spacer
+      - instagram

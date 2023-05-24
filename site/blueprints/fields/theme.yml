@@ -1,0 +1,12 @@
+type: group
+fields:
+  fg:
+    extends: fields/colours
+    label: Text Colour
+    help: Overrides site text colour.
+    width: 1/2
+  bg:
+    extends: fields/colours
+    label: BG Colour
+    help: Overrides site background colour.
+    width: 1/2

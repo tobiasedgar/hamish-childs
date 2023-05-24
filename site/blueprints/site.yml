@@ -1,0 +1,261 @@
+title: Site
+tabs:
+  pages:
+    columns:
+      - width: 1/3
+        sections:
+          # corePages:
+          #   type: pages
+          #   headline: Core Pages
+          #   status: published
+          #   image: false
+          #   template:
+          #     - home
+          #     - error
+          unlistedPages:
+            type: pages
+            headline: Unlisted Pages
+            status: unlisted
+            image: false
+
+      # - width: 1/3
+      #   sections:
+      #     listedPages:
+      #       type: pages
+      #       headline: Listed Pages
+      #       status: listed
+      #       image: false
+      # - width: 1/3
+      #   sections:
+      #     draftPages:
+      #       type: pages
+      #       headline: Draft Pages
+      #       status: draft
+      #       image: false
+
+  
+  # appearance:
+  #   label: Appearance
+  #   columns:
+  #     - width: 1/4
+  #       # sticky: true
+  #       fields:
+  #         coloursH:
+  #           type: headline
+  #           label: Theme Colours
+  #           numbered: false
+  #         theme:
+  #           extends: fields/theme
+  #           fields:
+  #             fg:
+  #               label: Site Text Colour
+  #               unselect: false
+  #               # required: true
+  #               help: Universal text colour fallback.
+  #             bg:
+  #               label: Site BG Colour
+  #               unselect: false
+  #               # required: true
+  #               help: Universal BG colour fallback.
+  #         colours:
+  #           label: Palette Settings
+  #           type: structure
+  #           help: Populate 'Colour Option' field and refresh to display in palette. Drag and drop to reorder.
+  #           width: 1/2
+  #           fields:
+  #             coloursName:
+  #               type: text
+  #               label: Colour Name
+  #               width: 1/2
+  #             coloursOption:
+  #               type: color
+  #               label: Colour Hex
+  #     - width: 3/4
+  #       fields:
+  #         headerHeadline:
+  #           type: headline
+  #           label: Header
+  #           numbered: false
+  #         headerIcon:
+  #           extends: fields/uploader
+  #           label: Header Icon
+  #           max: 1
+  #           help: SVG preferred.
+  #           width: 1
+  #         menu: sections/menu-builder
+  #         cta: fields/cta
+  #         modalHeadline:
+  #           type: headline
+  #           label: Modal
+  #           numbered: false
+  #         endpoint:
+  #           type: text
+  #           label: Endpoint
+  #           icon: url
+  #           help: Connects form to CRM repository.
+  #           width: 1/2
+  #         botpoison:
+  #           type: text
+  #           label: Botpoison Public Key
+  #           help: Add in for spam protection.
+  #           width: 1/2
+  #         form: sections/form-builder
+  #         igHeadline:
+  #           type: headline
+  #           label: Instagram
+  #           numbered: false
+  #         linkInstagram: 
+  #           extends: linkInstagram
+  #           label: Instagram Widget
+  #           help: On your developer's greenlight, connect your Instagram using these instructions <br />https://xdocs.notion.site/Link-instagram-with-your-website-9aa72c4961074cb4b4f9b5d1e6322e36
+  information:
+    label: Information
+    columns:
+      - width: 1/3
+        fields:
+          about:
+            extends: fields/writer-inline
+            icon: text
+      - width: 1/3
+        fields:
+          ex:
+            type: structure
+            label: Experience
+            columns:
+              where: 1
+            fields:
+              where:
+                label: Where
+                extends: fields/writer-inline
+              link:
+                label: Link
+                type: url
+              role:
+                label: Role
+                extends: fields/writer-inline
+              time:
+                label: Years
+                extends: fields/writer-inline
+      - width: 1/3
+        fields:
+          links:
+            type: structure
+            label: Links
+            fields:
+              link:
+                label: Link
+                type: url
+              text:
+                label: Text
+                extends: fields/writer-inline
+
+  settings:
+    label: Settings
+    columns:
+      - width: 1/2
+        fields:
+          metaH:
+            type: headline
+            label: Meta Settings
+            numbered: false
+          metaDescription:
+            type:  textarea
+            label: Description
+            buttons: false
+            maxlength: 300
+            size: tiny
+            help: A short summary to give people an idea of what to expect when visiting your website.
+          keywords:
+            type:  tags
+            label: Keywords
+            size: tiny
+            help: Keywords to help search engines index your website.
+          analyticsH:
+            type: headline
+            label: Analytics
+            numbered: false
+          googleAnalyticsID:
+            type: text
+            label: Google Analytics ID
+            icon: code
+            placeholder: UA-XXXXXXXX-X
+            width: 1/3
+          tagManagerID:
+            type: text
+            label: Google Tag Manager ID
+            icon: code
+            placeholder: GTM-XXXXXXX
+            width: 1/3
+          googleVerifyID:
+            type: text
+            label: Google Verification ID
+            icon: code
+            width: 1/3
+          fbVerifyID:
+            type: text
+            label: Facebook Verification ID
+            icon: code
+            width: 1/2
+          facebookPixelID:
+            type: text
+            label: Facebook Pixel ID
+            icon: code
+            width: 1/2
+          codeInject:
+            type: textarea
+            label: Header Code Injection
+            buttons: false
+            icon: code
+      - width: 1/2
+        fields:
+          socialH:
+            type: headline
+            label: Social Settings
+            numbered: false
+          ogImage:
+            extends: fields/uploader
+            label: Social Image
+            max: 1
+            help: First image people see when site is shared (1200 x 630px rec).
+            width: 1/2
+          faviconImage:
+            extends: fields/uploader
+            label: Favicon Image
+            max: 1
+            help: Square image used as global icon for the site (192 x 192px png).
+            image:
+              ratio: 16/5
+          contactH:
+            type: headline
+            label: Contact Details
+            numbered: false
+          address:
+            type: textarea
+            label: Address
+            buttons: false
+            icon: store
+          email:
+            type: email
+            label: Email Address
+            icon: email
+            width: 1/2
+          phone:
+            type: text
+            label: Phone Number
+            icon: phone
+            width: 1/2
+          ig:
+            type: text
+            label: Instagram
+            icon: instagram
+            width: 1/2
+          fb:
+            type: text
+            label: Facebook
+            icon: facebook
+            width: 1/2
+
+  files:
+    sections:
+      fileuploader:
+        extends: sections/uploader

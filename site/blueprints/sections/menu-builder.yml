@@ -1,0 +1,32 @@
+type: structure
+label: Menu Builder
+help: Drag and drop to reorder.
+fields:
+  menuName:
+    label: Link Name
+    extends: fields/writer-inline
+    required: true
+    width: 1/2
+  menuSource:
+    label: Source
+    type: select
+    width: 1/4
+    required: true
+    default: internal
+    options:
+      internal: Internal
+      external: External
+      blank: Blank
+  menuPage:
+    label: Page
+    type: pages
+    max: 1
+    when:
+      menuSource: internal
+    width: 1/4
+  menuLink:
+    label: Link URL
+    type: url
+    when:
+      menuSource: external
+    width: 1/4

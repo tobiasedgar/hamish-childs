@@ -1,0 +1,12 @@
+<link class="js-dynamic-favicon" rel="apple-touch-icon-precomposed" sizes="57x57" href="<?php if ($site->faviconImage()->isNotEmpty()) : ?><?= $site->faviconImage()->toFile()->resize(57, 57)->url() ?><?php else : ?>/assets/favicon/apple-touch-icon-57x57.png<?php endif ?>" />
+<link class="js-dynamic-favicon" rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php if ($site->faviconImage()->isNotEmpty()) : ?><?= $site->faviconImage()->toFile()->resize(114, 114)->url() ?><?php else : ?>/assets/favicon/apple-touch-icon-114x114.png<?php endif ?>" />
+<link class="js-dynamic-favicon" rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php if ($site->faviconImage()->isNotEmpty()) : ?><?= $site->faviconImage()->toFile()->resize(72, 72)->url() ?><?php else : ?>/assets/favicon/apple-touch-icon-72x72.png<?php endif ?>" />
+<link class="js-dynamic-favicon" rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php if ($site->faviconImage()->isNotEmpty()) : ?><?= $site->faviconImage()->toFile()->resize(144, 144)->url() ?><?php else : ?>/assets/favicon/apple-touch-icon-144x144.png<?php endif ?>" />
+<link class="js-dynamic-favicon" rel="apple-touch-icon-precomposed" sizes="120x120" href="<?php if ($site->faviconImage()->isNotEmpty()) : ?><?= $site->faviconImage()->toFile()->resize(120, 120)->url() ?><?php else : ?>/assets/favicon/apple-touch-icon-120x120.png<?php endif ?>" />
+<link class="js-dynamic-favicon" rel="apple-touch-icon-precomposed" sizes="152x152" href="<?php if ($site->faviconImage()->isNotEmpty()) : ?><?= $site->faviconImage()->toFile()->resize(152, 152)->url() ?><?php else : ?>/assets/favicon/apple-touch-icon-152x152.png<?php endif ?>" />
+<link class="js-dynamic-favicon" rel="icon" type="image/png" href="<?php if ($site->faviconImage()->isNotEmpty()) : ?><?= $site->faviconImage()->toFile()->resize(32, 32)->url() ?><?php else : ?>/assets/favicon/favicon-32x32.png<?php endif ?>"sizes="32x32" />
+<link class="js-dynamic-favicon" rel="icon" type="image/png" href="<?php if ($site->faviconImage()->isNotEmpty()) : ?><?= $site->faviconImage()->toFile()->resize(16, 16)->url() ?><?php else : ?>/assets/favicon/favicon-16x16.png<?php endif ?>"sizes="16x16" />
+
+<meta name="application-name" content="<?= $site->title() ?>"/>
+<meta name="msapplication-TileColor" content="#000000" />
+<meta name="msapplication-TileImage" content="/assets/favicon/mstile-144x144.png" />

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="cre8ivsitemapper:auto-generatedsitemapsforkirby3">Cre8iv Sitemapper: auto-generated sitemaps for Kirby 3</h1>
+
+<p>The Cre8iv Sitemapper is a plugin we created at <a href="https://cre8iv.click">Cre8iv Click</a>, to auto-generate syntactically-correct xml sitemaps for our clients' Kirby websites. Sitemaps are used by search engines to find and catalogue the content of your site - and hopefully help your site rankings!</p>
+
+<figure>
+<img src="preview.png" alt="sitemap preview" />
+<figcaption>sitemap preview</figcaption>
+</figure>
+
+<p>Here is what you need to know about Sitemapper:</p>
+
+<ul>
+<li>It makes the sitemap automatically available at <em>https://yoursite.com/sitemap.xml</em>. It will also try to guess when a visitor/bot enters a wrong url - such as <em>http://yoursite.com/en/sitemap.xml</em> - and will automatically redirect them to the correct address.</li>
+<li>It uses a nice, customisable stylesheet to display the site in a human-readable format, if accessed on a browser. You can also customise/localise all strings shown in the in-browser sitemap.</li>
+<li>It allows you to carefully control which pages get added to - and excluded from - the sitemap. You can control it via a blueprint option, via a field on individual pages, or by using a custom filtering function.</li>
+<li>You can also control which images get added to the sitemap, and to which pages. You can control it via a bluprint option, and via a field on the individual image content page.</li>
+<li>It maps pages correctly on multilingual sites, whether the page is multilingual or single-language.</li>
+<li>If you&#8217;re still not happy, Sitemapper allows you to build your own custom mapping function from scratch - useful for advanced sites that use <a href="https://getkirby.com/docs/guide/routing">custom routes</a> and/or <a href="https://getkirby.com/docs/guide/virtual-pages">virtual pages</a>.</li>
+</ul>
+
+<hr />
+
+<h2 id="installation">Installation</h2>
+
+<h3 id="manualdownload">Manual Download</h3>
+
+<p>You can simply download and copy this repository to <code>/site/plugins/sitemapper</code>.</p>
+
+<h3 id="gitsubmodule">Git Submodule</h3>
+
+<p>You can add Sitemapper to your project as a git submodule, with this command:</p>
+
+<pre><code>git submodule add https://gitlab.com/cre8ivclick/sitemapper.git site/plugins/sitemapper
+</code></pre>
+
+<h3 id="composer">Composer</h3>
+
+<p>If you use composer, you can quickly add Sitemapper to your project like this:</p>
+
+<pre><code>composer require cre8ivclick/sitemapper
+</code></pre>
+
+<hr />
+
+<h2 id="documentation">Documentation</h2>
+
+<p>Complete documentation for installing, configuring and using Sitemapper can be found in the <a href="https://gitlab.com/cre8ivclick/sitemapper/wikis/home">wiki area</a> of this project.</p>
+
+<hr />
+
+<h2 id="contributing">Contributing</h2>
+
+<p>Please use the &#8216;Issues&#8217; page of this project to report any bugs you find, and post ideas and feature requests.</p>
+
+<p>We have tried to keep the code in the plugin reasonably simple, organised and well-commented. Feel free to fork this project, and send enhancements and bug fixes via merge requests. Please be aware, that we aim to keep the plugin <em>simple</em> and <em>easy to maintain</em>.</p>
+
+<h2 id="to-do">To-Do</h2>
+
+<ul>
+<li>list a site&#8217;s video content</li>
+<li>include optional &#8216;changefreq&#8217; and &#8216;priority&#8217; tags for sitemap entries</li>
+</ul>
+
+<h2 id="license">License</h2>
+
+<p>Sitemapper is released under the MIT License - see the &#8216;LICENSE.md&#8217; file included in this repository for full license text.</p>
+
+<h2 id="credits">Credits</h2>
+
+<p>The Cre8iv Sitemapper is developed by <a href="https://cre8iv.click">Cre8iv Click</a>, but we stand on the shoulder of giants:</p>
+
+<ul>
+<li>the code was started by extending <a href="https://getkirby.com/docs/cookbook/content/sitemap">this Cookbook recipe</a> in the excellent Kirby Docs</li>
+<li>the stylesheet is based on work done by <a href="https://github.com/catcto/sitemap-stylesheet">Alan Wu</a></li>
+<li>some of the logic was based on previous sitemap work done by <a href="https://github.com/omz13/kirby3-xmlsitemap">David Somers</a></li>
+</ul>
+
+<p>Styling of the sitemap is done using the amazing <a href="https://getuikit.com">UIKit</a> frontend framework.</p>
+
+</body>
+</html>
+

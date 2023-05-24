@@ -1,0 +1,73 @@
+/* Colors
+---------------------------------*/
+/* Shadows
+---------------------------------*/
+/* Breakpoint
+---------------------------------*/
+/* Fields
+---------------------------------*/
+/* Typography
+---------------------------------*/
+/* Structure field
+---------------------------------------*/
+.k-color-field-preview,
+.k-colors-field-preview,
+.k-color-palette-field-preview,
+.k-tags-field-preview,
+.k-multiselect-field-preview,
+.k-structure-field-preview {
+  padding: 0 .75rem; }
+
+/* Toggle field
+---------------------------------------*/
+/* Alt files field preview
+---------------------------------------*/
+/* Color(s) field
+---------------------------------------*/
+.k-color-field-preview .color-preview,
+.k-colors-field-preview .color-preview {
+  width: 24px;
+  height: 24px; }
+
+/* Color Palette field
+---------------------------------------*/
+.k-color-palette-field-preview {
+  display: flex; }
+  .k-color-palette-field-preview .color-preview {
+    width: 24px;
+    height: 24px; }
+    .k-color-palette-field-preview .color-preview + .color-preview {
+      margin-left: 0.25rem; }
+
+/* Multiselect field
+---------------------------------------*/
+.k-multiselect-field-preview .multiselect-entries {
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 100%;
+  text-overflow: ellipsis; }
+  .k-multiselect-field-preview .multiselect-entries .multiselect-entry + .multiselect-entry:before {
+    content: ", "; }
+
+/* Tags field
+---------------------------------------*/
+.k-tags-field-preview .tags-preview {
+  display: flex;
+  white-space: nowrap; }
+  .k-tags-field-preview .tags-preview .tag {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    background: #16171a;
+    color: #fff;
+    font-size: 0.875rem; }
+    .k-tags-field-preview .tags-preview .tag + .tag {
+      margin-left: .25rem; }
+
+/* Structure field
+---------------------------------------*/
+.k-structure-field-preview .structure-entries-preview {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  background: rgba(239, 239, 239, 0.75);
+  text-transform: uppercase;
+  font-size: 0.75rem; }

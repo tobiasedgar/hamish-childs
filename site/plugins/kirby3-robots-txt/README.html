@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="kirby3robots.txt">Kirby 3 Robots.txt</h1>
+
+<p><img src="https://flat.badgen.net/packagist/v/bnomei/kirby3-robots-txt?color=ae81ff" alt="Release" />
+<img src="https://flat.badgen.net/packagist/dt/bnomei/kirby3-robots-txt?color=272822" alt="Downloads" />
+<a href="https://travis-ci.com/bnomei/kirby3-robots-txt"><img src="https://flat.badgen.net/travis/bnomei/kirby3-robots-txt" alt="Build Status" /></a>
+<a href="https://coveralls.io/github/bnomei/kirby3-robots-txt"><img src="https://flat.badgen.net/coveralls/c/github/bnomei/kirby3-robots-txt" alt="Coverage Status" /></a>
+<a href="https://codeclimate.com/github/bnomei/kirby3-robots-txt"><img src="https://flat.badgen.net/codeclimate/maintainability/bnomei/kirby3-robots-txt" alt="Maintainability" /></a>
+<a href="https://twitter.com/bnomei"><img src="https://flat.badgen.net/badge/twitter/bnomei?color=66d9ef" alt="Twitter" /></a></p>
+
+<p>Manage the <a href="https://developers.google.com/search/reference/robots_txt">robots.txt</a> from the Kirby config file.</p>
+
+<h2 id="similarplugin">Similar Plugin</h2>
+
+<ul>
+<li><a href="https://github.com/omz13/kirby3-wellknown">kirby3-wellknown</a></li>
+</ul>
+
+<h2 id="commericalusage">Commerical Usage</h2>
+
+<p>This plugin is free but if you use it in a commercial project please consider to</p>
+
+<ul>
+<li><a href="https://www.paypal.me/bnomei/3">make a donation 🍻</a> or</li>
+<li><a href="https://buymeacoff.ee/bnomei">buy me ☕</a> or</li>
+<li><a href="https://a.paddle.com/v2/click/1129/35731?link=1170">buy a Kirby license using this affiliate link</a></li>
+</ul>
+
+<h2 id="installation">Installation</h2>
+
+<ul>
+<li>unzip <a href="https://github.com/bnomei/kirby3-robots-txt/archive/master.zip">master.zip</a> as folder <code>site/plugins/kirby3-robots-txt</code> or</li>
+<li><code>git submodule add https://github.com/bnomei/kirby3-robots-txt.git site/plugins/kirby3-robots-txt</code> or</li>
+<li><code>composer require bnomei/kirby3-robots-txt</code></li>
+</ul>
+
+<h2 id="setup">Setup</h2>
+
+<p>The plugin generates automatic defaults for the starterkit. You do not have to enter them in the config file. But if you would it would look like this.</p>
+
+<blockquote>
+<p>TIP: If you are using the <a href="https://github.com/omz13/kirby3-xmlsitemap">kirby3-xmlsitemap Plugin</a> your sitemap will be automatically added to the <code>robots.txt</code> file. You can skip setting the <code>bnomei.robots-txt.sitemap</code> config value to <code>sitemap.xml</code>.</p>
+</blockquote>
+
+<p><strong>defaults for starterkit</strong></p>
+
+<pre><code class="php">&lt;?php
+return [
+    'bnomei.robots-txt.content' =&gt; null, // string or callback
+    'bnomei.robots-txt.sitemap' =&gt; null, // string or callback
+    'bnomei.robots-txt.groups' =&gt; [ // array or callback
+        '*' =&gt; [ // user-agent
+            'disallow' =&gt; [
+                '/kirby/',
+                '/site/',
+            ],
+            'allow' =&gt; [
+                '/media/',
+            ]
+        ]
+    ]
+];
+</code></pre>
+
+<p><strong>using a plain string</strong></p>
+
+<pre><code class="php">&lt;?php
+return [
+    'bnomei.robots-txt.content' =&gt; 'user-agent: *
+disallow: /kirby/
+disallow: /site/
+allow: /media/',
+];
+</code></pre>
+
+<p><strong>using a callback</strong></p>
+
+<pre><code class="php">&lt;?php
+return [
+    'bnomei.robots-txt.content' =&gt; function() {
+        return site()-&gt;myRobotsTxtContentField()-&gt;value();
+    },
+];
+</code></pre>
+
+<p><strong>sitemap and multiple user-agents</strong></p>
+
+<pre><code class="php">&lt;?php
+return [
+    'bnomei.robots-txt.sitemap' =&gt; 'sitemap.xml',
+    'bnomei.robots-txt.groups' =&gt; [
+        '*' =&gt; [
+            'disallow' =&gt; [
+                '/',
+            ],
+        ],
+        'googlebot-images' =&gt; [
+            'allow' =&gt; [
+                '/media/',
+            ]
+        ]
+    ]
+];
+</code></pre>
+
+<h2 id="stagingserverdebugmodedisallowall">Staging Server? Debug Mode = Disallow all</h2>
+
+<p>Since v1.3.0 when you set the global Kirby <code>debug</code> config to <code>true</code> the plugin will disallow all indexing for all user-agents. This is especially usefull on a staging server but you could consider xml-sitemap and rss-feed among other things as well.</p>
+
+<h2 id="disclaimer">Disclaimer</h2>
+
+<p>This plugin is provided &#8220;as is&#8221; with no guarantee. Use it at your own risk and always test it yourself before using it in a production environment. If you find any issues, please <a href="https://github.com/bnomei/kirby3-robots-txt/issues/new">create a new issue</a>.</p>
+
+<h2 id="license">License</h2>
+
+<p><a href="https://opensource.org/licenses/MIT">MIT</a></p>
+
+<p>It is discouraged to use this plugin in any project that promotes racism, sexism, homophobia, animal abuse, violence or any other form of hate speech.</p>
+
+</body>
+</html>
+

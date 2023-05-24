@@ -1,0 +1,13 @@
+title: Page
+icon: 📄
+options:
+  changeTemplate: false
+
+extends: layouts/meta
+tabs:
+  pages: false
+  builder:
+    columns:
+      - width: 1
+        fields:
+          pagebuilder: sections/builder

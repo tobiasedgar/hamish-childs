@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="kirby3imgixpluginversionhttps:img.shields.iopackagistvdiesdasdigitalkirby-3-imgix.svghttps:packagist.orgpackagesdiesdasdigitalkirby-3-imgix">Kirby 3 imgix plugin <a href="https://packagist.org/packages/diesdasdigital/kirby-3-imgix"><img src="https://img.shields.io/packagist/v/diesdasdigital/kirby-3-imgix.svg" alt="Version" /></a></h1>
+
+<p>If this plugin gets activated, it will serve all images (except for gifs) via <a href="https://imgix.com/">imgix</a>.</p>
+
+<h2 id="installation">Installation</h2>
+
+<pre><code class="bash">composer require diesdasdigital/kirby-3-imgix
+</code></pre>
+
+<h2 id="configuration">Configuration</h2>
+
+<p>In any config file or the default <code>site/config/config.php</code>:</p>
+
+<pre><code class="php">return [
+  'imgix' =&gt; true,
+  'imgix.domain' =&gt; 'https://project-name.imgix.net/',
+  'imgix.defaults' =&gt; [
+    'auto' =&gt; 'compress',
+  ],
+];
+</code></pre>
+
+<p><code>imgix.defaults</code> takes a map of options, which all images will have applied automatically without calling <code>thumb()</code>.</p>
+
+<h2 id="usage">Usage</h2>
+
+<p>All images will automatically be served via imgix if <code>imgix</code> and <code>imgix.domain</code> are set in the config.</p>
+
+<p>The options provided by imgix can be passed via the <code>thumb()</code> function:</p>
+
+<pre><code class="php">$page-&gt;someImage()-&gt;image()-&gt;thumb([
+  'blur' =&gt; '10',
+  'con' =&gt; '40',
+])-&gt;url();
+</code></pre>
+
+<p>Since version <code>1.1.0</code> support for Kirby’s built-in <code>srcset()</code> method is improved to automatically use imgix’s
+<code>w</code> and <code>h</code> parameters instead of width and height.</p>
+
+<pre><code class="php">$page-&gt;someImage()-&gt;toFile()-&gt;srcset([300, 800, 1024])
+
+// with additional parameters
+$page-&gt;someImage()-&gt;toFile()-&gt;srcset([
+  300 =&gt; [
+    'width' =&gt; 300,
+    'crop' =&gt; 'top,left'
+  ],
+  500 =&gt; [
+    'width' =&gt; 500
+  ]
+])
+</code></pre>
+
+<p>See <a href="https://docs.imgix.com/apis/url">imgix API reference</a> for all options.</p>
+
+<h2 id="imgixsourceconfiguration">imgIX Source Configuration</h2>
+
+<p>If you&#8217;re new to imgIX, you will have to do a few extra steps:</p>
+
+<ul>
+<li><a href="https://dashboard.imgix.com/sign-up">Sign up for an account</a></li>
+<li>Set up a new source:</li>
+<li> Pick a subdomain you want you&#8217;re assets to be referred to.</li>
+<li> Choose the setting which fits with your server setup (Webfolder if you use default kirby settings ☺️)</li>
+<li> Add the webfolder url (for Kirby this will be: project-name.com/)</li>
+</ul>
+
+<hr />
+
+<p>Inspired by Kirby’s website, which uses a <a href="https://github.com/getkirby/getkirby.com/blob/master/site/plugins/cloudinary/index.php">custom cloudinary plugin</a>.</p>
+
+<p>Created by <a href="https://diesdas.digital">diesdas.digital</a></p>
+
+</body>
+</html>
+

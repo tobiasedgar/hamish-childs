@@ -1,0 +1,6 @@
+type: writer
+marks:
+  - bold
+  - underline
+  - link
+  - email

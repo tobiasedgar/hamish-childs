@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="kirbycolor">Kirby Color</h1>
+
+<p>Kirby-Color is a color picker plugin for Kirby CMS v3.</p>
+
+<img alt="Kirby Color Screenshot" src="https://raw.githubusercontent.com/TimOetting/kirby-color/master/preview.png" width="344">
+
+<h2 id="installation">Installation</h2>
+
+<h3 id="git">Git</h3>
+
+<p>From the root of your kirby project:</p>
+
+<pre><code>git clone https://github.com/TimOetting/kirby-color.git site/plugins/kirby-color
+</code></pre>
+
+<h3 id="composer">Composer</h3>
+
+<pre><code>composer require timoetting/kirby-color
+</code></pre>
+
+<h3 id="directdownload">Direct Download</h3>
+
+<p>Alternatively you can download the zip file, unzip it&#8217;s contents into site/plugins/kirby-color.</p>
+
+<h2 id="exampleblueprintfieldentry">Example Blueprint Field Entry</h2>
+
+<pre><code class="yaml">fields:
+...
+  color:
+    type: color
+    editableAlpha: true # (optional) if set to false, alpha value controls are not displayed
+    default: &quot;#EFCB69&quot; # (optional)
+    presets: # (optional)
+      - &quot;#EB6896&quot;
+      - &quot;#C36894&quot;
+      - &quot;#836890&quot;
+      - &quot;#46698D&quot;
+      - &quot;#0F6A8B&quot;
+</code></pre>
+
+</body>
+</html>
+

@@ -1,0 +1,9 @@
+type: files
+label: File Selector
+uploads: false
+multiple: false
+width: 1/2
+layout: cards
+size: tiny
+help: Select the corresponding file (upload via uploader tab first). 
+maxpixels: 12000000

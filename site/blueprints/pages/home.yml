@@ -1,0 +1,18 @@
+title: Home
+icon: 🏠
+options:
+  duplicate: false
+  changeSlug: false
+  changeStatus: false
+  changeTemplate: false
+  delete: false
+
+extends: layouts/meta
+tabs:
+  pages: false
+  builder:
+    columns:
+      - width: 1
+        fields:
+          text:
+            extends: fields/writer-inlie

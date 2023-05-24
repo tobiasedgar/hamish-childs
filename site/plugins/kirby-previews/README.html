@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="kirbypreviews">Kirby Previews</h1>
+
+<p>Add some missing structure previews in the panel.</p>
+
+<figure>
+<img src="https://user-images.githubusercontent.com/14079751/50736950-dcab0080-11c3-11e9-9548-02a04cdacaaf.jpg" alt="screenshot" />
+<figcaption>screenshot</figcaption>
+</figure>
+
+<blockquote>
+<p>This plugin is completely free and published under the MIT license. However, if you are using it in a commercial project and want to help me keep up with maintenance, please consider <a href="https://www.paypal.me/sylvainjl">making a donation of your choice</a> or purchasing your license(s) through <a href="https://a.paddle.com/v2/click/1129/36369?link=1170">my affiliate link</a>.</p>
+</blockquote>
+
+<br/>
+
+<h2 id="1.installation">1. Installation</h2>
+
+<p>Download and copy this repository to <code>/site/plugins/previews</code></p>
+
+<p>Alternatively, you can install it with composer: <code>composer require sylvainjule/previews</code></p>
+
+<br/>
+
+<h2 id="2.setup">2. Setup</h2>
+
+<p>That&#8217;s it, no need for additional config. This plugin currently provides those field-previews :</p>
+
+<ul>
+<li>Multiselect</li>
+<li>Structure</li>
+<li>Tags</li>
+<li>Toggle</li>
+<li><a href="https://github.com/TimOetting/kirby-color">Color</a></li>
+<li><a href="https://github.com/hananils/kirby-colors">Colors</a></li>
+<li><a href="https://github.com/sylvainjule/kirby-color-palette">Color-palette</a></li>
+</ul>
+
+<br/>
+
+<h2 id="3.addeditapreview">3. Add / edit a preview</h2>
+
+<ul>
+<li>Clone the repo</li>
+<li><code>cd</code> to your newly created folder (named <code>kirby-previews</code>, or whatever you have chosen)</li>
+<li>Please read the <a href="https://github.com/getkirby/pluginkit/tree/4-panel">pluginkit guidelines</a>, and install <code>parcel</code> as explained.</li>
+</ul>
+
+<p>From there, adding a new preview might only take a few minutes:</p>
+
+<ul>
+<li>Start by running the plugin in dev mode to benefit from hot-reload while working on your preview (<code>npm run dev</code>)</li>
+<li>Create a new preview under <code>src/components</code> (check the existing previews for how to structure content).</li>
+<li>Add your preview CSS in <code>src/assets/styles.scss</code></li>
+<li>Register you new preview in <code>src/index.js</code> (check the existing previews for how to do this).</li>
+<li>Build the plugin (<code>npm run build</code>)</li>
+<li>Create a pull request</li>
+</ul>
+
+<blockquote>
+<p>You <strong>must</strong> run the build process before pushing the repo, else the hot-reload code will prevent it to work in any install.</p>
+</blockquote>
+
+<br/>
+
+<h2 id="4.license">4. License</h2>
+
+<p>MIT</p>
+
+</body>
+</html>
+

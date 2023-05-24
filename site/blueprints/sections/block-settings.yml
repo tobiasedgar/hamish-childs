@@ -1,0 +1,8 @@
+label: Block Settings
+fields:
+  theme: fields/theme
+  anchor:
+    type: text
+    label: Anchor Name
+    help: Auto generates a unique block ID for anchor linking.
+    width: 1/2

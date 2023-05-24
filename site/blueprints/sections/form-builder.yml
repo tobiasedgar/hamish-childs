@@ -1,0 +1,42 @@
+type: structure
+label: Form Fields
+help: Drag and drop to reorder.
+fields:
+  formType:
+    label: Field Type
+    type: select
+    default: text
+    required: true
+    options:
+      text: Text
+      textArea: Text Area
+      email: Email
+      dropdown: Dropdown
+    width: 1/2
+    required: true
+  formName:
+    label: Field Name
+    type: text
+    required: true
+    placeholder: your-name
+    width: 1/2
+    help: Field identifier.
+  formLabel:
+    label: Label
+    type: text
+    width: 1/2
+  formPlaceholder:
+    type: text
+    label: Placeholder
+    help: Dropdown field first option will be auto used as placeholder.
+    width: 1/2
+  formDropdown:
+    label: Dropdown Options
+    type: structure
+    fields:
+      formOption:
+        label: Option Label
+        type: text
+        required: true
+    when:
+      formType: dropdown

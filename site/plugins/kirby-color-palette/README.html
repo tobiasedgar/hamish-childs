@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="kirbycolor-palette">Kirby Color-Palette</h1>
+
+<p>A color palette displayed in the panel, helping you pick predefined colors / palettes.</p>
+
+<figure>
+<img src="https://user-images.githubusercontent.com/14079751/47902848-12a9cc80-de83-11e8-92ea-cabf5031b355.jpg" alt="screenshot-palette-cursor" />
+<figcaption>screenshot-palette-cursor</figcaption>
+</figure>
+
+<br/>
+
+<h2 id="overview">Overview</h2>
+
+<blockquote>
+<p>This plugin is completely free and published under the MIT license. However, if you are using it in a commercial project and want to help me keep up with maintenance, please consider <a href="https://www.paypal.me/sylvainjl">making a donation of your choice</a> or purchasing your license(s) through <a href="https://a.paddle.com/v2/click/1129/36369?link=1170">my affiliate link</a>.</p>
+</blockquote>
+
+<ul>
+<li><a href="#1-installation">1. Installation</a></li>
+<li><a href="#2-setup">2. Setup</a></li>
+<li><a href="#3-configuration">3. Configuration</a></li>
+<li><a href="#4-extract-palette-from-an-image">4. Extract palette from an image</a></li>
+<li><a href="#5-template-usage">5. Template usage</a></li>
+<li><a href="#6-license">6. License</a></li>
+<li><a href="#7-credits">7. Credits</a></li>
+</ul>
+
+<br/>
+
+<h2 id="1.installation">1. Installation</h2>
+
+<p>Download and copy this repository to <code>/site/plugins/color-palette</code></p>
+
+<p>Alternatively, you can install it with composer: <code>composer require sylvainjule/color-palette</code></p>
+
+<br/>
+
+<h2 id="2.setup">2. Setup</h2>
+
+<p>A basic setup looks like this:</p>
+
+<pre><code class="yaml">palette:
+  label: Pick a color
+  type: color-palette
+  options:
+    - '#135fdc'
+    - '#f6917e'
+    - '#6a96e4'
+    - ...
+</code></pre>
+
+<p>Note that you can fill it with any CSS-valid color:</p>
+
+<pre><code class="yaml">- '#ffffff'
+- rgba(255, 255, 255, 0.5)
+- rgb(255, 255, 255)
+- white
+</code></pre>
+
+<h2 id="3.configuration">3. Configuration</h2>
+
+<h4 id="3.1.optionsrequired">3.1. <code>options</code> (required)</h4>
+
+<p>The plugin accepts both an array or a structured object.</p>
+
+<h5 id="• simplecolors">• Simple colors</h5>
+
+<pre><code class="yaml">palette:
+  type: color-palette
+  options:
+    - '#135fdc'
+    - '#f6917e'
+    - '#6a96e4'
+    - ...
+</code></pre>
+
+<h5 id="• structuredcolorthemes">• Structured color themes</h5>
+
+<p>The field will use the first color of the object as the background-color.</p>
+
+<pre><code class="yaml">palette:
+  type: color-palette
+  options:
+    blue:
+      background: '#135fdc'
+      border: '#0438c7'
+      text: white
+    orange:
+      background: '#f6917e'
+      border: '#ef6a57'
+      text: white
+    ...
+</code></pre>
+
+<p>You can add tooltips to structured colors: any color with the <code>tooltip</code> key will show a tooltip on hover.</p>
+
+<pre><code class="yaml">...
+  options:
+    blue:
+      background: '#135fdc'
+      tooltip: This is a tooltip
+    ...
+</code></pre>
+
+<figure>
+<img src="https://user-images.githubusercontent.com/14079751/70157500-fbf12d00-16b5-11ea-8572-4877dbcb32e5.jpg" alt="screenshot-tooltip" />
+<figcaption>screenshot-tooltip</figcaption>
+</figure>
+
+<h5 id="• dynamicoptions">• Dynamic options</h5>
+
+<p>You can set dynamic options / query your options from a different field. Just make sure the <code>value</code> returns a CSS-valid color.</p>
+
+<p>For example with a structure field:</p>
+
+<pre><code class="yaml">palette:
+  type: color-palette
+  options: query
+  query:
+    fetch: page.mycolors.toStructure
+    value: &quot;{{ structureItem.color }}&quot;
+
+...
+
+mycolors:
+  type: structure
+  fields:
+    color:
+      type: text
+</code></pre>
+
+<h4 id="3.2.display">3.2. <code>display</code></h4>
+
+<figure>
+<img src="https://user-images.githubusercontent.com/14079751/47905300-117a9e80-de87-11e8-8853-5b328b993439.jpg" alt="screenshot-display" />
+<figcaption>screenshot-display</figcaption>
+</figure>
+
+<p>The display style of the color blocks, to pick from <code>single</code> or <code>duo</code> . Default is <code>single</code>.</p>
+
+<p>If the selected style is <code>duo</code> and the options are structured color themes, the field will use the first color of the object as the left color, and the second as the right color.</p>
+
+<pre><code class="yaml">palette:
+  type: color-palette
+  display: single
+</code></pre>
+
+<h4 id="3.3.size">3.3. <code>size</code></h4>
+
+<figure>
+<img src="https://user-images.githubusercontent.com/14079751/47905301-12133500-de87-11e8-85f2-6ab680cab91d.jpg" alt="screenshot-size" />
+<figcaption>screenshot-size</figcaption>
+</figure>
+
+<p>The size of the color blocks, to pick from <code>small</code>, <code>medium</code> or <code>large</code>. Default is <code>medium</code>.</p>
+
+<pre><code class="yaml">palette:
+  type: color-palette
+  size: medium
+</code></pre>
+
+<h4 id="3.4.unselect">3.4. <code>unselect</code></h4>
+
+<p>If set to <code>true</code>, selected colors can be unselected. Default is <code>false</code>.</p>
+
+<pre><code class="yaml">palette:
+  type: color-palette
+  unselect: false
+</code></pre>
+
+<h4 id="3.5.default">3.5. <code>default</code></h4>
+
+<p>The default value to be used if the field has no set value. Will be ignored if it doesn&#8217;t match an option. Default is <code>false</code>.</p>
+
+<pre><code class="yaml">#simple colors
+palette:
+  type: color-palette
+  default: '#135fdc'
+  options:
+    - '#135fdc'
+    - '#f6917e'
+
+# structured colors
+palette:
+  type: color-palette
+  default: blue
+  options:
+    blue:
+      background: '#135fdc'
+      border: '#0438c7'
+    orange:
+      background: '#f6917e'
+      border: '#ef6a57'
+</code></pre>
+
+<br/>
+
+<h2 id="4.extractpalettefromanimage">4. Extract palette from an image</h2>
+
+<h4 id="4.1.selectmanuallywhichimagetoextractcolorsfrom">4.1. Select manually which image to extract colors from</h4>
+
+<p>You can extract a color palette from a page&#8217;s image file by activating the <code>extractor</code> option. It will override the manual options, if specified. Default is <code>false</code>.</p>
+
+<pre><code class="yaml">palette:
+  type: color-palette
+  extractor: true
+  # no need for options anymore
+</code></pre>
+
+<p>You can restrict the choices to a specific file template with the <code>template</code> option:</p>
+
+<pre><code class="yaml">palette:
+  type: color-palette
+  extractor: true
+  template: cover
+</code></pre>
+
+<h4 id="4.2.automaticallyextractcolorswhenanimagematchesatemplate">4.2. Automatically extract colors when an image matches a template</h4>
+
+<p>Alternatively, you can make use of the <code>autotemplate</code> option (do not add the above <code>extractor</code> option in this case).</p>
+
+<p>If the page has at least 1 image matching the given template (if 2+ are found, the field will use the first one), options will automatically be extracted from it on load.</p>
+
+<p>Note that <strong>there is no realtime-sync</strong>, the page needs to be reloaded in order for the plugin to detect a newly added image. The best way of achieving this without having to manually refresh the page is to place this field and the files section under two different tabs.</p>
+
+<pre><code class="yaml">palette:
+  type: color-palette
+  autotemplate: cover
+  # no need for options anymore
+</code></pre>
+
+<h4 id="4.3.limit">4.3. Limit</h4>
+
+<p>In both cases, the maximum number of extracted colors can be set with the <code>limit</code> option. Default is <code>10</code>.</p>
+
+<pre><code class="yaml">palette:
+  type: color-palette
+  extractor: true
+  limit: 10
+</code></pre>
+
+<br/>
+
+<h2 id="5.templateusage">5. Template usage</h2>
+
+<h4 id="5.1.ifoptionsisanarrayofsimplecolors">5.1. If <code>options</code> is an array of simple colors</h4>
+
+<p>The field will only store the selected color.</p>
+
+<pre><code class="php">$selected = $page-&gt;palette();   #(Field object)
+$selected = $selected-&gt;value(); #(string)
+</code></pre>
+
+<h4 id="5.2.ifoptionsisastructuredcolorobject">5.2. If <code>options</code> is a structured color object</h4>
+
+<p>The field will need to be decoded with the <code>yaml</code> method. For example, if your options look like this:</p>
+
+<pre><code class="yaml">options:
+  blue:
+    background: '#135fdc'
+    border: '#0438c7'
+</code></pre>
+
+<p>Here&#8217;s how to get the selected color:</p>
+
+<pre><code class="php">$palette    = $page-&gt;palette()-&gt;yaml();
+$background = $palette['background']; #(string)
+$border     = $palette['border']; #(string)
+</code></pre>
+
+<p>Note that in this case, the plugin automatically adds the key of the selected color, in case you&#8217;d want it to deal with custom classes, etc.</p>
+
+<pre><code class="php">$border     = $palette['key']; #(string)
+</code></pre>
+
+<h4 id="5.3.ifthepalettehasbeenextractedfromanimage">5.3. If the palette has been extracted from an image</h4>
+
+<p>Both the selected color and the extracted palette are stored. The value of the field is an array you&#8217;ll need to decode with the <code>yaml</code> method:</p>
+
+<pre><code class="php">$palette  = $page-&gt;palette()-&gt;yaml();
+$selected = $palette[0]; #selected color (string)
+$palette  = $palette[1]; #extracted palette (array)
+</code></pre>
+
+<br/>
+
+<h2 id="6.license">6. License</h2>
+
+<p>MIT</p>
+
+<br/>
+
+<h2 id="7.credits">7. Credits</h2>
+
+<ul>
+<li>K2 version: <a href="https://github.com/Thiousi/kirby-color-list">Color list</a> by <a href="https://github.com/Thiousi">@Thiousi</a></li>
+</ul>
+
+</body>
+</html>
+

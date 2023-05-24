@@ -1,0 +1,15 @@
+type: group
+fields:
+  ctaText:
+    type: text
+    label: CTA Text
+    width: 1/3
+  ctaLink:
+    type: text
+    label: CTA Link
+    icon: url
+    width: 1/3
+  ctaTarget:
+    type: toggle
+    label: Open in new window
+    width: 1/3

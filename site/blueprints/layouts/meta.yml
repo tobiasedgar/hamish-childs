@@ -1,0 +1,71 @@
+tabs:
+  meta:
+    label: Page Settings
+    columns:
+      - width: 3/4
+        fields:
+          mHead:
+            type: headline
+            label: Page Meta
+            numbered: false
+          metaHeading:
+            type: text
+            label: Meta Heading
+            placeholder: "{{ page.title }}"
+            help: Leave empty to use the title as the meta headline.
+          metaDescription:
+            extends: fields/writer-inline
+            label: Meta Description
+            marks: false
+            help: Leave empty to use the site meta description.
+          sitemap:
+            extends: fields/sitemap
+            help: Adding content to your site's sitemap helps search engine rankings.
+            width: 1/2
+      - width: 1/4
+        fields:
+          tHead:
+            type: headline
+            label: Page Theme
+            numbered: false
+          theme: fields/theme
+
+  pages:
+    label: Pages
+    columns:
+      - width: 1/3
+        sections:
+          listedPages:
+            type: pages
+            headline: Listed Pages
+            status: listed
+            image: icon
+            help: Drag and drop to reorder.
+            template:
+              - page
+      - width: 1/3
+        sections:
+          unlistedPages:
+            type: pages
+            headline: Unlisted Pages
+            status: unlisted
+            image: icon
+            template:
+              - page
+      - width: 1/3
+        sections:
+          draftPages:
+            type: pages
+            headline: Draft Pages
+            status: draft
+            image: icon
+            template:
+              - page
+
+  builder:
+    label: Page Builder
+  
+  files:
+    sections:
+      fileuploader: sections/uploader
+

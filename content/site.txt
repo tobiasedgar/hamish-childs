@@ -1,0 +1,149 @@
+Title: Hamish Childs
+
+----
+
+About: Hamish Childs is a multidisciplinary graphic designer specialising in brand identity and illustration within the cultural and commercial worlds. His expertise stretches across digital and printed mediums to produce concept and strategic driven outcomes.
+
+----
+
+Ex:
+
+- 
+  where: Studio Round 
+  link: https://www.round.com.au/
+  role: Senior Designer
+  time:  2018–Current
+- 
+  where: SouthSouthWest 
+  link: https://ssw.studio/
+  role: Senior Designer
+  time:  2015–2018
+- 
+  where:  Design By Pidgeon
+  link: https://www.pidgeonward.com.au/
+  role:  Designer
+  time:  2011–2015 
+- 
+  where: Strategy Design
+  link: https://strategycreative.com/en
+  role:  Designer 
+  time: 2008–2011 
+- 
+  where: 'Nike (Vendor #5119871) '
+  link: https://www.nike.com/nz/
+  role: Art Director
+  time: Ongoing
+
+----
+
+Links:
+
+- 
+  link: ""
+  text: Instagram
+  where: >
+    https://www.instagram.com/hamish_childs/?hl=en
+- 
+  link: ""
+  text: Twitter
+  where: https://twitter.com/hamishchilds
+- 
+  link: ""
+  text: LinkedIn
+  where: https://au.linkedin.com/in/hamishchilds
+
+----
+
+Metadescription: 
+
+----
+
+Keywords: 
+
+----
+
+Googleanalyticsid: 
+
+----
+
+Tagmanagerid: 
+
+----
+
+Googleverifyid: 
+
+----
+
+Fbverifyid: 
+
+----
+
+Facebookpixelid: 
+
+----
+
+Codeinject: 
+
+----
+
+Ogimage: 
+
+----
+
+Faviconimage: 
+
+----
+
+Address: 
+
+----
+
+Email: 
+
+----
+
+Phone: 
+
+----
+
+Ig: 
+
+----
+
+Fb: 
+
+----
+
+Colours: 
+
+----
+
+Headericon: 
+
+----
+
+Menu: 
+
+----
+
+Ctatext: 
+
+----
+
+Ctalink: 
+
+----
+
+Ctatarget: false
+
+----
+
+Endpoint: 
+
+----
+
+Botpoison: 
+
+----
+
+Form: 

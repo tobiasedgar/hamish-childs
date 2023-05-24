@@ -1,0 +1,7 @@
+type: files
+headline: File Uploader
+layout: cards
+template: media
+size: tiny
+help: Upload files via clicking on the box or dragging in.<br/>Images — .jpg, .png / Videos — .mp4 / Vectors - .svg <br/>3mb limit for images, 10mb for videos (these videos should be short, use video specific block for long form).
+maxpixels: 12000000

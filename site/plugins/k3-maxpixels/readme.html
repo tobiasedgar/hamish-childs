@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<p>Resize images in the browser before uploading them to the server.</p>
+
+<h1 id="install">Install</h1>
+
+<p>Download and copy folder into your <code>plugins</code> directory.</p>
+
+<h1 id="use">Use</h1>
+
+<p>On a files section, set the <code>maxpixels</code> property.</p>
+
+<h2 id="example">Example</h2>
+
+<pre><code class="yaml">my_image_section:
+  type: files
+  maxpixels: 2000000 #two million pixels
+</code></pre>
+
+<p>Now, when a user tries to upload a 9000x12000 pixel image, this image will be resized to 1224x1632, which are 1&#8217;997&#8217;568 pixels.</p>
+
+<h1 id="butwhy">But why?</h1>
+
+<p>Servers have limited resources.</p>
+
+<p>Trying to resize a 9000x12000 pixels large image to 1224x1632 pixels, requires at least:</p>
+
+<pre><code class="math">(9000 * 12000 + 1224 * 1632) * 4bytes ~= 440MB of RAM.
+</code></pre>
+
+<p>If your shared hosting provider limits your max RAM per request to 256MB, you won&#8217;t ever be able to resize the image on your server.</p>
+
+<h1 id="knownissues">Known issues</h1>
+
+<ul>
+<li> On Microsoft Edge, resized images are renamed to &#8220;blob&#8221;. (Both the release of Kirby 3.2 and the adoption of V8 in Edge should solve this issue).</li>
+<li> Files replaced from inside the File view will not be resized. (see issue <a href="#cn:1" id="cnref:1" title="see citation" class="citation">(1)</a>(https://github.com/rasteiner/k3-maxpixels-option/issues/2))</li>
+</ul>
+
+<div class="citations">
+<hr />
+<ol>
+
+<li id="cn:1">
+<p>2 <a href="#cnref:1" title="return to body" class="reversecitation">&#160;&#8617;</a></p>
+</li>
+
+</ol>
+</div>
+
+</body>
+</html>
+

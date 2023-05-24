@@ -1,0 +1,34 @@
+type: group
+fields:
+  kind:
+    type: select
+    label: Media Type
+    width: 1/4
+    default: single
+    required: true
+    options:
+      single: Image
+      video: Video
+  controls:
+    type: toggle
+    label: Toggle video controls
+    width: 1/4
+    when:
+      kind: video
+  img: 
+    extends: fields/uploader
+    label: Image
+    max: 1
+    width: 3/4
+    image:
+      ratio: 16/9
+    when:
+      kind: single
+  video:
+    label: Video
+    type: text
+    help: Use full video URL to embed. Must end in .mp4
+    icon: url
+    width: 1/2
+    when:
+      kind: video
